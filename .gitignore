@@ -1,2 +1,4 @@
-dbconnectguide.php
-private/db_credentials.php
+.DS_Store
+public/.DS_Store
+asgn10-starter-files.zip
+.vscode

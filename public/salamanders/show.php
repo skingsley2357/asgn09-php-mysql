@@ -1,22 +1,32 @@
-<?php require_once('../../private/initialize.php'); ?>
+<?php 
+require_once('../../private/initialize.php');
 
-<?php
-  $id = $_GET['id'] ?? '1';
+// $id = isset($_GET['id']) ? $_GET['id'] : '1';
+$id = $_GET['id'] ?? '1'; // PHP > 7.0
+
+$page_title = 'View Salamander';
+include(SHARED_PATH . '/salamanderHeader.php'); 
+
+$salamander = find_salamander_by_id($id);
 ?>
 
-<?php $page_title = 'View Salamander'; ?>
-<?php include(SHARED_PATH . '/salamanderHeader.php'); ?>
+<a href="<?= url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
 
-<div id="content">
-
-  <a class="back-link" href="<?php echo url_for('/salamanders/index.php'); ?>">&laquo; Back to List</a>
-
-  <div class="page-show">
-
-    Page ID: <?php echo h($id); ?>
-
-  </div>
-
-</div>
+<dl>
+    <dt>ID</dt>
+    <dd><?= $salamander['id']; ?></dd>
+</dl>
+<dl>
+    <dt>Name</dt>
+    <dd><?= $salamander['name']; ?></dd>
+</dl>
+<dl>
+    <dt>Habitat</dt>
+    <dd><?= $salamander['habitat']; ?></dd>
+</dl>
+<dl>
+    <dt>Desciption</dt>
+    <dd><?= $salamander['description']; ?></dd>
+</dl>
 
 <?php include(SHARED_PATH . '/salamanderFooter.php'); ?>

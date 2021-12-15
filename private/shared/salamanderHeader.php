@@ -6,9 +6,10 @@
 
 <html lang="en">
   <head>
-    <title>SAS - <?php echo h($page_title); ?></title>
+    <title>SAS - <?= h($page_title); ?></title>
     <meta charset="utf-8">
-    <link rel="stylesheet" media="all" href="<?php echo url_for('/stylesheets/salamanders.css'); ?>">
+    <!-- In case you want to add some CSS -->
+    <!-- <link rel="stylesheet" media="all" href="<?php // echo url_for('/stylesheets/salamanders.css'); ?>" /> -->
   </head>
 
   <body>
@@ -16,8 +17,8 @@
       <h1>Southern Appalachian Salamanders</h1>
     </header>
 
-    <navigation>
+    <!-- <navigation>
       <ul>
-        <li><a href="<?php echo url_for('/index.php'); ?>">Menu</a></li>
+        <li><a href="<?= url_for('/index.php'); ?>">Menu</a></li>
       </ul>
-    </navigation>
+    </navigation> -->
