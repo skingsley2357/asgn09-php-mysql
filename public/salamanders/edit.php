@@ -12,7 +12,7 @@ if(is_post_request()) {
   $salamander['habitat'] = $_POST['habitat'] ?? '';
   $salamander['description'] = $_POST['description'] ?? '';
 
-  $result = update_subject($salamander);
+  $result = update_salamander($salamander);
 
 } else {
   $salamander = find_salamander_by_id($id);
